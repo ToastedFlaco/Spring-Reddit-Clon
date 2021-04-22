@@ -1,7 +1,11 @@
 package com.github.toastedflaco.redditclon.exception;
 
 public class SpringRedditException extends RuntimeException {
-    public SpringRedditException(String message) {
-        super(message);
+    public SpringRedditException(String exMessage, Exception exception) {
+        super(exMessage, exception);
+    }
+
+    public SpringRedditException(String exMessage) {
+        super(exMessage);
     }
 }

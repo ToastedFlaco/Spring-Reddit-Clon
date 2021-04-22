@@ -19,7 +19,7 @@ import java.time.Instant;
 public class Post {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long postId;
 
     @NotBlank(message = "The name of the Post cannot be empty or null")
@@ -33,7 +33,7 @@ public class Post {
     @Lob
     private String description;
 
-    private Integer voteCount;
+    private Integer voteCount=0;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "userId", referencedColumnName = "userId")
